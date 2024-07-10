@@ -1,15 +1,12 @@
-import { Button } from "./components/ui/button";
-import Test from "./pages/Test";
+import Container from "./components/Container";
+import Navbar from "./components/layout/Navbar";
 
 const App = () => {
   return (
     <>
-      <h1 className="text-5xl font-bold">Hello Developer</h1>
-      <Button>Hello</Button>
-
-      <div className="max-w-5xl mx-auto">
-        <Test />
-      </div>
+      <Container>
+        <Navbar />
+      </Container>
     </>
   );
 };
