@@ -4,9 +4,7 @@ import Navbar from "./components/layout/Navbar";
 const App = () => {
   return (
     <>
-      <Container>
-        <Navbar />
-      </Container>
+      <Navbar />
     </>
   );
 };
