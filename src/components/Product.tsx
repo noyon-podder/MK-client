@@ -8,9 +8,9 @@ const Product = () => {
 
   const productData = data?.data?.slice(0, 6);
   return (
-    <div className="lg:py-8 lg:px-0 p-5">
+    <div className="lg:pb-7 lg:px-0">
       <Container>
-        <div>
+        <div className="p-5">
           <h2 className="text-2xl font-semibold text-gray-900">
             Featured Products
           </h2>

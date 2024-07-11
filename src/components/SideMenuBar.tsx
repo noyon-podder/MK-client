@@ -1,12 +1,9 @@
 import { IoClose } from "react-icons/io5";
 import MenuItem from "./MenuItem";
 import { Link } from "react-router-dom";
+import { TSideMenuBarProps } from "../types/common";
 
-type SideMenuBarProps = {
-  sideMenuBar: boolean;
-  setSideMenuBar: (value: boolean) => void;
-};
-const SideMenuBar: React.FC<SideMenuBarProps> = ({
+const SideMenuBar: React.FC<TSideMenuBarProps> = ({
   setSideMenuBar,
   sideMenuBar,
 }) => {
@@ -37,7 +34,7 @@ const SideMenuBar: React.FC<SideMenuBarProps> = ({
             </div>
           </div>
           {/* menu items */}
-          <MenuItem />
+          <MenuItem setSideMenuBar={setSideMenuBar} />
         </div>
       </div>
     </>

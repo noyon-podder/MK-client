@@ -7,3 +7,8 @@ export type TProduct = {
   rating: number;
   brand: string;
 };
+
+export type TSideMenuBarProps = {
+  sideMenuBar?: boolean;
+  setSideMenuBar: (value: boolean) => void;
+};

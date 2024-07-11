@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import { TSideMenuBarProps } from "../types/common";
 
-const MenuItem = () => {
+const MenuItem: React.FC<TSideMenuBarProps> = ({ setSideMenuBar }) => {
   const menuItems = [
     {
       id: 1,
@@ -29,6 +30,7 @@ const MenuItem = () => {
         {menuItems.map((item) => (
           <li key={item.id}>
             <Link
+              onClick={() => setSideMenuBar(false)}
               to={item.path}
               className="text-lg font-semibold text-black lg:text-white lg:hover:text-[#ede6e6] duration-300"
             >
