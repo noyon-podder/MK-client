@@ -1,5 +1,5 @@
 import Container from "./components/Container";
-import Navbar from "./components/layout/Navbar";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (

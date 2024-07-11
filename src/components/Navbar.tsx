@@ -1,7 +1,9 @@
 import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 import { BsEnvelope } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
-import Container from "../Container";
+import Container from "./Container";
+import MenuItem from "./MenuItem";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -37,7 +39,7 @@ const Navbar = () => {
             {/* <Button>Cart</Button> */}
             <div className="flex items-center gap-5 justify-end">
               <div className="lg:flex hidden items-center gap-3">
-                <BsEnvelope size={28} />
+                <BsEnvelope size={24} />
                 <div className="flex flex-col ">
                   <h2 className="text-sm text-white font-semibold">
                     Questions?
@@ -65,6 +67,16 @@ const Navbar = () => {
               </button>
             </div>
           </div>
+        </div>
+        <div className="mt-5 lg:flex items-center justify-between px-4 hidden ">
+          <MenuItem />
+
+          <Link
+            to="/"
+            className="text-white text-xl font-semibold hover:text-[#ede6e6] duration-300"
+          >
+            Login
+          </Link>
         </div>
       </Container>
       <h2></h2>
