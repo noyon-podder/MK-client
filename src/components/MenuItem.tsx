@@ -25,12 +25,12 @@ const MenuItem = () => {
   ];
   return (
     <>
-      <ul className="flex items-center gap-4">
+      <ul className="flex items-center gap-4 lg:flex-row flex-col  ">
         {menuItems.map((item) => (
           <li key={item.id}>
             <Link
               to={item.path}
-              className="text-lg font-semibold text-white hover:text-[#ede6e6] duration-300"
+              className="text-lg font-semibold text-black lg:text-white lg:hover:text-[#ede6e6] duration-300"
             >
               {item.label}
             </Link>
