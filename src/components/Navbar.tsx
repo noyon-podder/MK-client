@@ -20,7 +20,7 @@ const Navbar = () => {
       )}
       <div className="bg-main text-white py-3">
         <Container>
-          <div className="flex items-center justify-between w-full gap-4 px-4">
+          <div className="flex items-center justify-between w-full gap-4 px-4 xl:px-0">
             <div
               className="block lg:hidden"
               onClick={() => setSideMenuBar(!sideMenuBar)}
@@ -41,6 +41,7 @@ const Navbar = () => {
               <div className=" xl:w-[700px] flex  items-center pr-2 w-full h-10 bg-white rounded-lg">
                 <input
                   type="text"
+                  placeholder="What are you looking for?"
                   name=""
                   id=""
                   className="w-full h-full px-3 py-2 rounded-md border-none outline-none text-black"
@@ -71,11 +72,12 @@ const Navbar = () => {
             </div>
           </div>
           <div className="mt-3">
-            <div className=" w-full flex-1 lg:flex-1 xl:mr-10 block lg:hidden px-4">
+            <div className=" w-full flex-1 lg:flex-1 xl:mr-10 block lg:hidden xl:px-0 px-4">
               <div className=" xl:w-[700px] flex  items-center pr-2 w-full h-10 bg-white rounded-md">
                 <input
                   type="text"
                   name=""
+                  placeholder="What are you looking for?"
                   id=""
                   className="w-full h-full px-3 py-2 rounded-md border-none outline-none text-black"
                 />
@@ -85,7 +87,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div className="mt-5 lg:flex items-center justify-between px-4 hidden ">
+          <div className="mt-5 lg:flex items-center justify-between xl:px-0 px-4 hidden ">
             <MenuItem />
 
             <Link
