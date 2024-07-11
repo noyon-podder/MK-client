@@ -1,10 +1,11 @@
-import React from "react";
-import HeroSlider from "../components/HeroSlider";
+import Brand from "../components/page/Brand";
+import HeroSlider from "../components/page/HeroSlider";
 
 const Home = () => {
   return (
     <>
       <HeroSlider />
+      <Brand />
     </>
   );
 };

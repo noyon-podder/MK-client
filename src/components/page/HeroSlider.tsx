@@ -1,12 +1,12 @@
+import { Button } from "../ui/button";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../components/ui/carousel";
-import Container from "./Container";
-import { Button } from "./ui/button";
+} from "../ui/carousel";
+import Container from "./../Container";
 
 const HeroSlider = () => {
   const sliderData = [

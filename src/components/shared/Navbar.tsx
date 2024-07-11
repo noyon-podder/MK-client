@@ -1,11 +1,12 @@
 import { IoCartOutline, IoSearchOutline } from "react-icons/io5";
 import { BsEnvelope } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
-import Container from "./Container";
-import MenuItem from "./MenuItem";
 import { Link } from "react-router-dom";
-import SideMenuBar from "./SideMenuBar";
+
 import { useState } from "react";
+import SideMenuBar from "../SideMenuBar";
+import MenuItem from "../MenuItem";
+import Container from "../Container";
 
 const Navbar = () => {
   const [sideMenuBar, setSideMenuBar] = useState(false);
