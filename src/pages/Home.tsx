@@ -2,6 +2,7 @@ import Advirtisement from "../components/Advirtisement";
 import Brand from "../components/page/Brand";
 import HeroSlider from "../components/page/HeroSlider";
 import Product from "../components/Product";
+import Reviews from "../components/Reviews";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Brand />
       <Advirtisement />
       <Product />
+      <Reviews />
     </>
   );
 };

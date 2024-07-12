@@ -89,7 +89,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className="mt-5 lg:flex items-center justify-between xl:px-0 px-4 hidden ">
-            <MenuItem />
+            <MenuItem setSideMenuBar={setSideMenuBar} />
 
             <Link
               to="/"
