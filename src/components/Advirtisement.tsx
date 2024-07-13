@@ -38,7 +38,7 @@ const Advirtisement = () => {
         {advertisementData?.map((item) => (
           <div
             key={item.id}
-            className="py-5 px-4  border lg:border-r lg:border-b-0 lg:border-t-0 lg:border-l-0 "
+            className="py-5 px-4  border lg:border-r lg:border-b-0 lg:border-t lg:border-l-0 hover:shadow-md transition-shadow duration-300"
           >
             <span className="text-[32px] ">{item.icon}</span>
             <h2 className="text-lg font-semibold  text-gray-900 mb-2 mt-3">

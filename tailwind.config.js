@@ -75,17 +75,6 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
-    scrollbar: {
-      hide: `
-        &::-webkit-scrollbar {
-          display: none;
-        }
-        & {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `,
-    },
   },
 
   plugins: [require("tailwindcss-animate")],

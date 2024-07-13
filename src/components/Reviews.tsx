@@ -10,7 +10,7 @@ import "swiper/css";
 
 const Reviews = () => {
   return (
-    <div>
+    <div className="py-10">
       <Container>
         <div className="p-5">
           <h2 className="text-2xl font-semibold text-gray-900 mb-5">
