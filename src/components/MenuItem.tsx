@@ -1,29 +1,8 @@
 import { Link } from "react-router-dom";
 import { TSideMenuBarProps } from "../types/common";
+import { menuItems } from "../data/menudata";
 
 const MenuItem: React.FC<TSideMenuBarProps> = ({ setSideMenuBar }) => {
-  const menuItems = [
-    {
-      id: 1,
-      path: "/",
-      label: "Home",
-    },
-    {
-      id: 2,
-      path: "/about",
-      label: "About",
-    },
-    {
-      id: 3,
-      path: "/contact",
-      label: "Contact",
-    },
-    {
-      id: 4,
-      path: "/dashboard",
-      label: "Dashboard",
-    },
-  ];
   return (
     <>
       <ul className="flex items-center gap-4 lg:flex-row flex-col  ">

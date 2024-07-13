@@ -34,7 +34,7 @@ const Navbar = () => {
             {/* header part */}
             <div className="xl:flex-1 ">
               <div className="lg:w-[150px]">
-                <h2 className="font-bold text-white text-3xl p-0">LOGO</h2>
+                <h2 className="font-bold text-white text-3xl p-0">MK Shop</h2>
               </div>
             </div>
             {/* search part */}
