@@ -4,11 +4,11 @@ import FaqAccrodion from "./FaqAccrodion";
 
 const WhyChooseUs = () => {
   return (
-    <div className="bg-[#f8f8f8] py-20">
+    <div className="bg-[#f8f8f8] lg:py-20 py-10">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-5 ">
           <div>
-            <h2 className="lg:text-4xl text-2xl font-bold text-gray-900 mb-5 ">
+            <h2 className="lg:text-4xl text-3xl font-bold text-gray-900 mb-5 ">
               Have a question? We are here to help.
             </h2>
             <p className="text-lg text-gray-600 mb-7 lg:mb-10">
