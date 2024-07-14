@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import DashboardLayout from "../components/layout/DashboardLayout";
 import AddProduct from "../components/page/dashboard/AddProduct";
+import Dashboard from "../components/page/dashboard/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -21,11 +22,16 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/dashboard",
+    path: "/",
     element: <DashboardLayout />,
+
     children: [
       {
-        path: "add-product",
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "dashboard/add-product",
         element: <AddProduct />,
       },
     ],
