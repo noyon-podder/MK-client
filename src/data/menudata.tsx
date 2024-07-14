@@ -32,6 +32,12 @@ export const dashboardRoute = [
   },
   {
     id: 2,
+    path: "/",
+    icon: <IoIosHome size={24} />,
+    name: "Home",
+  },
+  {
+    id: 3,
     path: "/dashboard/add-product",
     icon: <IoBagAddOutline size={24} />,
     name: "Add Product",
