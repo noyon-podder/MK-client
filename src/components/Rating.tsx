@@ -15,7 +15,7 @@ const Rating = ({ rating, color }: TRating) => {
       <svg
         key={i}
         xmlns="http://www.w3.org/2000/svg"
-        className={`h-8 w-8 ${i <= rating ? color.filled : color.unfilled}`}
+        className={`h-6 w-6 ${i <= rating ? color.filled : color.unfilled}`}
         viewBox="0 0 20 20"
         fill="currentColor"
       >

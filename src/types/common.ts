@@ -6,6 +6,8 @@ export type TProduct = {
   quantity: number;
   rating: number;
   brand: string;
+  image: string;
+  hoverImage: string;
 };
 
 export type TSideMenuBarProps = {
