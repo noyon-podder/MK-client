@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { menuItems } from "../../data/menudata";
 import { MdFacebook } from "react-icons/md";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
+import { menuItems } from "../../data/menudata";
 
 const Footer = () => {
   return (

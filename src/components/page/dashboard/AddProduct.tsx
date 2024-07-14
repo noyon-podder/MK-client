@@ -3,8 +3,8 @@ import AddProductForm from "./AddProductForm";
 
 const AddProduct = () => {
   return (
-    <div className="py-5 px-5 mt-5 " style={{ height: "calc(100vh - 90px)" }}>
-      <div className="flex items-center justify-between bg-white px-5 py-3">
+    <div className="py-5 lg:px-5 lg:mt-5 ">
+      <div className="flex items-center justify-between flex-col lg:flex-row bg-white px-5 py-3">
         <h2 className="text-2xl font-bold">Add Product</h2>
 
         <div>
