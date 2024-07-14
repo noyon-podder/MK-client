@@ -1,4 +1,3 @@
-import React from "react";
 import { IoIosHome } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
 

@@ -5,6 +5,7 @@ import { Button } from "../../ui/button";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { FieldValues } from "react-hook-form";
 
 // Define a validation schema using yup
 const schema = yup.object().shape({
@@ -28,7 +29,7 @@ const AddProductForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: FieldValues) => {
     console.log(data);
   };
 
