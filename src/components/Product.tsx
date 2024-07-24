@@ -1,4 +1,4 @@
-import { useGetProductQuery } from "../redux/api/baseApi";
+import { useGetProductQuery } from "../redux/featured/product/productApi";
 import { TProduct } from "../types/common";
 import Container from "./Container";
 import ProductCard from "./shared/ProductCard";

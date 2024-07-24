@@ -1,15 +1,33 @@
 import { AiFillEdit, AiFillEye } from "react-icons/ai";
 import { RiDeleteBin7Line } from "react-icons/ri";
-import { useGetProductQuery } from "../../../redux/api/baseApi";
 import { TProduct } from "../../../types/common";
 import { FaXmark } from "react-icons/fa6";
 import { formatPrice } from "../../../utils/formatPrice";
 import Loading from "../../shared/Loading";
+import {
+  useDeleteProductMutation,
+  useGetProductQuery,
+} from "../../../redux/featured/product/productApi";
+import { toast } from "sonner";
 
 const ProductTable = () => {
   const { data, isLoading } = useGetProductQuery(undefined);
+  const [deleteProduct] = useDeleteProductMutation();
 
   if (isLoading) return <Loading />;
+
+  const handleProductDelete = (id: string) => {
+    const confirm = window.confirm(
+      "Are you sure you want to delete this product"
+    ) as boolean;
+
+    if (confirm) {
+      deleteProduct(id);
+      toast.success("Product deleted successfully");
+    } else {
+      toast.error("something went wrong");
+    }
+  };
 
   return (
     <div className="py-5 ">
@@ -147,7 +165,10 @@ const ProductTable = () => {
                     <button className="focus:outline-none transition-all duration-100 p-2 rounded-full bg-[#60a5fa1a] text-[#60a5fa] hover:bg-[#60a5fa] hover:text-white">
                       <AiFillEdit className=" text-[12px] " />
                     </button>
-                    <button className="focus:outline-none transition-all duration-300 p-2 rounded-full bg-[#f43f5e1a] text-[#f43f5e] hover:bg-[#f43f5e] hover:text-white">
+                    <button
+                      onClick={() => handleProductDelete(item._id)}
+                      className="focus:outline-none transition-all duration-300 p-2 rounded-full bg-[#f43f5e1a] text-[#f43f5e] hover:bg-[#f43f5e] hover:text-white"
+                    >
                       <RiDeleteBin7Line className="text-[12px]" />
                     </button>
                   </div>

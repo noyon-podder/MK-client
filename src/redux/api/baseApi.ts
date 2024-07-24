@@ -5,14 +5,6 @@ export const baseApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://mk-server-psi.vercel.app/api/v1",
   }),
-  endpoints: (builder) => ({
-    getProduct: builder.query({
-      query: () => ({
-        url: "/product",
-        method: "GET",
-      }),
-    }),
-  }),
+  tagTypes: ["Product"],
+  endpoints: () => ({}),
 });
-
-export const { useGetProductQuery } = baseApi;
