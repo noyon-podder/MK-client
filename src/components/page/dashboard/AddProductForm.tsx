@@ -105,7 +105,7 @@ const AddProductForm = () => {
           </p>
         )}
       </div>
-      <div className="mb-4 flex gap-4">
+      <div className="mb-4 flex gap-4  md:flex-row flex-col">
         <div className="flex-1">
           <label
             htmlFor="productImage"
@@ -165,7 +165,7 @@ const AddProductForm = () => {
           </p>
         )}
       </div>
-      <div className="mb-8 flex gap-4">
+      <div className="mb-4 flex gap-4  md:flex-row flex-col">
         <div className="flex-1">
           <label
             htmlFor="brand"
@@ -205,7 +205,7 @@ const AddProductForm = () => {
           )}
         </div>
       </div>
-      <div className="mb-8 flex gap-4">
+      <div className="mb-4 flex gap-4  md:flex-row flex-col">
         <div className="flex-1">
           <label
             htmlFor="price"

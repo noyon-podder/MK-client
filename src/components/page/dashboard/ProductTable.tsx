@@ -1,7 +1,6 @@
-import { AiFillEdit, AiFillEye } from "react-icons/ai";
+import { AiFillEye } from "react-icons/ai";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { TProduct } from "../../../types/common";
-import { FaXmark } from "react-icons/fa6";
 import { formatPrice } from "../../../utils/formatPrice";
 import Loading from "../../shared/Loading";
 import {
@@ -9,8 +8,10 @@ import {
   useGetProductQuery,
 } from "../../../redux/featured/product/productApi";
 import { toast } from "sonner";
+import EditModal from "./EditModal";
+import React from "react";
 
-const ProductTable = () => {
+const ProductTable: React.FC = () => {
   const { data, isLoading } = useGetProductQuery(undefined);
   const [deleteProduct] = useDeleteProductMutation();
 
@@ -50,7 +51,7 @@ const ProductTable = () => {
                 className={`border-l px-2 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500
                 `}
               >
-                CATEGORY
+                brand
               </th>
               <th
                 className={`border-l px-2 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500
@@ -115,7 +116,8 @@ const ProductTable = () => {
                   className={`border-l px-2 py-4 whitespace-nowrap  text-gray-600  
                   `}
                 >
-                  <FaXmark className="text-gray-400 text-base" />
+                  {/* <FaXmark className="text-gray-400 text-base" /> */}
+                  {item?.brand}
                 </td>
                 <td className="border-l px-2 py-4 whitespace-nowrap">
                   <span
@@ -162,9 +164,7 @@ const ProductTable = () => {
                     <button className="focus:outline-none transition-all duration-100 p-2 rounded-full bg-[#eab3081a] hover:bg-[#eab308] text-[#eab308] hover:text-white ">
                       <AiFillEye className=" text-[12px]" />
                     </button>
-                    <button className="focus:outline-none transition-all duration-100 p-2 rounded-full bg-[#60a5fa1a] text-[#60a5fa] hover:bg-[#60a5fa] hover:text-white">
-                      <AiFillEdit className=" text-[12px] " />
-                    </button>
+                    <EditModal item={item} />
                     <button
                       onClick={() => handleProductDelete(item._id)}
                       className="focus:outline-none transition-all duration-300 p-2 rounded-full bg-[#f43f5e1a] text-[#f43f5e] hover:bg-[#f43f5e] hover:text-white"
