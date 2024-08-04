@@ -29,6 +29,15 @@ module.exports = {
         },
         main: {
           DEFAULT: "#F85606",
+          // border: "#dddddd",
+          heading: "#222222",
+          // base: "#be3d20",
+        },
+        borderColor: {
+          DEFAULT: "#dddddd",
+        },
+        base: {
+          DEFAULT: "#be3d20",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

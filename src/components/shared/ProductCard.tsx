@@ -4,6 +4,7 @@ import Rating from "../Rating";
 import { Button } from "../ui/button";
 import "../../styles/custom.css";
 import { formatPrice } from "../../utils/formatPrice";
+import { TbCurrencyTaka } from "react-icons/tb";
 
 const ProductCard = ({ product }: { product: TProduct }) => {
   const { brand, name, image, hoverImage, price, rating, quantity } = product;
@@ -23,7 +24,7 @@ const ProductCard = ({ product }: { product: TProduct }) => {
           alt="avatar"
         />
 
-        <div className="px-4 pt-2 py-3">
+        <div className="px-4 pt-2 py-3 border-t border-borderColor">
           <span className="text-main text-sm mb-2 block font-semibold">
             {brand}
           </span>
@@ -37,8 +38,9 @@ const ProductCard = ({ product }: { product: TProduct }) => {
               color={{ filled: "text-yellow-500", unfilled: "text-gray-300" }}
             />
 
-            <h2 className="text-xl font-bold text-gray-900">
-              ${formatPrice(price)}
+            <h2 className="lg:text-xl text-lg font-bold text-base flex items-center">
+              <TbCurrencyTaka size={24} />
+              {formatPrice(price)}
             </h2>
           </div>
 

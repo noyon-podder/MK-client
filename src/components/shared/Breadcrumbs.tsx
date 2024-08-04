@@ -1,5 +1,6 @@
 import { IoIosHome } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const Breadcrumbs = () => {
   const location = useLocation();
@@ -8,7 +9,7 @@ const Breadcrumbs = () => {
   const pathnames = location.pathname.split("/").filter((x) => x);
 
   return (
-    <nav className="flex py-3" aria-label="breadcrumb">
+    <nav className="flex py-3 px-4 lg:px-0" aria-label="breadcrumb">
       <ol className="inline-flex items-center space-x-1 md:space-x-2">
         <li className="inline-flex items-center">
           <Link
@@ -24,9 +25,12 @@ const Breadcrumbs = () => {
 
           return (
             <li key={to} className="inline-flex items-center capitalize ">
-              <span className="mx-2 text-gray-400"> / </span>
+              <span className="mx-2 text-gray-400">
+                {" "}
+                <MdKeyboardDoubleArrowRight size={20} />{" "}
+              </span>
               {isLast ? (
-                <span className="text-sm font-medium text-gray-500 ">
+                <span className="text-sm font-medium text-gray-800 ">
                   {value}
                 </span>
               ) : (
