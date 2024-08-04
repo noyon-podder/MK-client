@@ -7,7 +7,7 @@ import { FaStripe } from "react-icons/fa";
 
 const ProductSidebar = ({ data }: { data: TProduct[] }) => {
   return (
-    <div className="col-span-3 hidden lg:block">
+    <div className="">
       {/* filter by brand */}
       <div className="border border-borderColor mb-[30px] bg-white overflow-hidden max-h-[300px] overflow-y-auto">
         <h3 className="py-[10px] pl-[10px] border-b border-borderColor font-bold text-heading uppercase">

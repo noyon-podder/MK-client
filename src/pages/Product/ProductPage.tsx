@@ -10,15 +10,40 @@ import ProductListStyleCard from "../../components/shared/ProductListStyleCard";
 import ProductGridLoadingSkeleton from "./ProductGridLoadingSkeleton";
 import { useLocation, useNavigate } from "react-router-dom";
 import ProductListLoadingSkeleton from "./ProductListLoadingSkeleton";
+import { useEffect, useState } from "react";
+import ProductSortSidebar from "./ProductSortSidebar";
 
 const ProductPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const params = new URLSearchParams(location.search);
-  const view = params.get("view") || "grid";
+  const [view, setView] = useState("grid");
+
   const { data, isLoading } = useGetProductQuery(undefined);
 
+  // automatically change view value if device under 500px
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const currentView = params.get("view") || "grid";
+    setView(currentView);
+
+    // Media query to detect screen size
+    const handleResize = (event: MediaQueryListEvent) => {
+      if (event.matches && view === "list") {
+        setView("grid");
+        params.set("view", "grid");
+        navigate({ search: params.toString() });
+      }
+    };
+
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    mediaQuery.addEventListener("change", handleResize);
+
+    return () => mediaQuery.removeEventListener("change", handleResize);
+  }, [location.search, navigate, view]);
+
   const toggleView = (newView: string) => {
+    setView(newView);
+    const params = new URLSearchParams(location.search);
     params.set("view", newView);
     navigate({ search: params.toString() });
   };
@@ -29,11 +54,13 @@ const ProductPage = () => {
         <Breadcrumbs />
       </div>
       <div className="grid grid-cols-12 gap-5">
-        <ProductSidebar data={data?.data} />
+        <div className="col-span-3 hidden lg:block">
+          <ProductSidebar data={data?.data} />
+        </div>
         <div className="lg:col-span-9 col-span-12 ">
           {/* product card top heading */}
           <div className="border-t border-b px-4 lg:px-0 py-3 border-borderColor  flex items-center justify-between">
-            <div className="flex items-center gap-2">
+            <div className="lg:flex items-center gap-2 hidden ">
               <button
                 className={`w-[30px] h-[30px]  flex items-center justify-center  ${
                   view === "grid"
@@ -61,6 +88,8 @@ const ProductPage = () => {
                 />
               </button>
             </div>
+
+            <ProductSortSidebar />
 
             {/* sorting selection */}
             <div className="flex items-center">
