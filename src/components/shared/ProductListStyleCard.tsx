@@ -32,7 +32,7 @@ const ProductListStyleCard = ({ product }: TProductListProps) => {
         />
 
         <div className="flex justify-between mt-3 item-center">
-          <h1 className="lg:text-xl text-lg font-bold text-base flex items-center">
+          <h1 className="lg:text-xl text-lg font-bold  flex items-center">
             <TbCurrencyTaka size={24} />
             {formatPrice(product.price)}
           </h1>
