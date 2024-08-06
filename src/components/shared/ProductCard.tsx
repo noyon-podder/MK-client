@@ -5,9 +5,11 @@ import { Button } from "../ui/button";
 import "../../styles/custom.css";
 import { formatPrice } from "../../utils/formatPrice";
 import { TbCurrencyTaka } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }: { product: TProduct }) => {
-  const { brand, name, image, hoverImage, price, rating, quantity } = product;
+  const { brand, name, image, hoverImage, price, rating, quantity, _id } =
+    product;
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -35,10 +37,10 @@ const ProductCard = ({ product }: { product: TProduct }) => {
           <div className="flex items-center justify-between mt-3">
             <Rating
               rating={rating}
-              color={{ filled: "text-yellow-500", unfilled: "text-gray-300" }}
+              color={{ filled: "text-[#ffa20f]", unfilled: "text-gray-300" }}
             />
 
-            <h2 className="lg:text-xl text-lg font-bold text-base flex items-center">
+            <h2 className="lg:text-xl text-lg font-bold  flex items-center">
               <TbCurrencyTaka size={24} />
               {formatPrice(price)}
             </h2>
@@ -48,7 +50,9 @@ const ProductCard = ({ product }: { product: TProduct }) => {
             <p>
               <b>Quantity:</b> {quantity}
             </p>
-            <Button size="sm">See Details</Button>
+            <Link to={`/product/${_id}`}>
+              <Button size="sm">See Details</Button>
+            </Link>
           </div>
         </div>
       </div>

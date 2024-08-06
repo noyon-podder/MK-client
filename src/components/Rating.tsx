@@ -1,3 +1,6 @@
+import { IoMdStarOutline } from "react-icons/io";
+import { FaStar } from "react-icons/fa6";
+
 type TRating = {
   rating: number;
   color: {
@@ -12,19 +15,13 @@ const Rating = ({ rating, color }: TRating) => {
 
   for (let i = 1; i <= count; i++) {
     stars.push(
-      <svg
-        key={i}
-        xmlns="http://www.w3.org/2000/svg"
-        className={`h-6 w-6 ${i <= rating ? color.filled : color.unfilled}`}
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path d="M9.049.3l1.977 4.006 4.418.646-3.2 3.117.755 4.407-3.95-2.078-3.95 2.078.755-4.407-3.2-3.117 4.418-.646L9.049.3z" />
-      </svg>
+      <span key={i} className={i <= rating ? color.filled : color.unfilled}>
+        {i <= rating ? <FaStar size={20} /> : <IoMdStarOutline size={20} />}
+      </span>
     );
   }
 
-  return <div className="flex">{stars}</div>;
+  return <div className="flex items-center gap-[4px]">{stars}</div>;
 };
 
 export default Rating;

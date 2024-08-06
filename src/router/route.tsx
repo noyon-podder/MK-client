@@ -6,6 +6,7 @@ import DashboardLayout from "../components/layout/DashboardLayout";
 import AddProduct from "../components/page/dashboard/AddProduct";
 import Dashboard from "../components/page/dashboard/Dashboard";
 import ProductPage from "../pages/Product/ProductPage";
+import ProductDetailsPage from "../pages/ProductDetails/ProductDetailsPage";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: "/products",
         element: <ProductPage />,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductDetailsPage />,
       },
     ],
   },

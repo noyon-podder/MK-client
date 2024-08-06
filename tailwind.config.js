@@ -28,7 +28,7 @@ module.exports = {
           foreground: "hsl(var(--primary-foreground))",
         },
         main: {
-          DEFAULT: "#F85606",
+          DEFAULT: "#be3d20",
           // border: "#dddddd",
           heading: "#222222",
           // base: "#be3d20",
@@ -36,8 +36,11 @@ module.exports = {
         borderColor: {
           DEFAULT: "#dddddd",
         },
-        base: {
-          DEFAULT: "#be3d20",
+        noyonColor: {
+          DEFAULT: "#d20000",
+        },
+        headingColor: {
+          DEFAULT: "#041826",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
