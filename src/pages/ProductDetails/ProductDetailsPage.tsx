@@ -6,6 +6,7 @@ import ProductActionHandler from "./ProductActionHandler";
 import AllProductDetails from "./AllProductDetails";
 import Loading from "../../components/shared/Loading";
 import { ProductDescriptionAccordion } from "./ProductDescriptionAccordion";
+import CustomerServiceInfo from "../Product/CustomerServiceInfo";
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
@@ -31,15 +32,17 @@ const ProductDetailsPage = () => {
                 <AllProductDetails product={product?.data} />
               )}
             </div>
-            <div className="lg:col-span-3 col-span-12 sticky">
-              <ProductActionHandler
-                finalQuantity={finalQuantity}
-                count={count}
-                setCount={setCount}
-                isLoading={isLoading}
-                brand={product?.data?.brand}
-                product={product?.data}
-              />
+            <div className="lg:col-span-3 col-span-12  ">
+              <div className="sticky top-0">
+                <ProductActionHandler
+                  finalQuantity={finalQuantity}
+                  count={count}
+                  setCount={setCount}
+                  isLoading={isLoading}
+                  brand={product?.data?.brand}
+                  product={product?.data}
+                />
+              </div>
             </div>
           </div>
 
@@ -47,7 +50,9 @@ const ProductDetailsPage = () => {
             <div className="lg:col-span-7 col-span-12">
               <ProductDescriptionAccordion product={product?.data} />
             </div>
-            <div className="lg:col-span-3 col-span-12 sticky">sidebar</div>
+            <div className="lg:col-span-3 col-span-12 sticky">
+              <CustomerServiceInfo />
+            </div>
           </div>
         </div>
       </Container>

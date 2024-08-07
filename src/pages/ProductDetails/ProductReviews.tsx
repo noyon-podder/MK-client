@@ -1,3 +1,5 @@
+import ProductReviewCard from "./ProductReviewCard";
+
 const ProductReviews = () => {
   return (
     <div className="mt-8 ">
@@ -8,10 +10,14 @@ const ProductReviews = () => {
       </div>
 
       {/* //!write a review button it is only show for authenticated user */}
-      <div className="mt-4 flex items-center justify-end">
+      <div className="mt-5 flex items-center justify-end ">
         <button className="bg-[#F8E5E5] px-6 py-2 outline-none rounded-md border-none text-base font-semibold text-headingColor">
           Write Review
         </button>
+      </div>
+      <div className="my-5">
+        <ProductReviewCard />
+        <ProductReviewCard />
       </div>
     </div>
   );
