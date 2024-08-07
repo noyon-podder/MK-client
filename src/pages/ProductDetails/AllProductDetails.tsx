@@ -1,6 +1,5 @@
 import Rating from "../../components/Rating";
 import { TProduct } from "../../types/common";
-import { formatPrice } from "../../utils/formatPrice";
 
 type TAllProductDetailsProps = {
   product: TProduct;
@@ -37,8 +36,8 @@ const AllProductDetails = ({ product }: TAllProductDetailsProps) => {
         <div className="mt-5 flex items-center gap-3">
           <div className="text-headingColor lg:text-[36px] text-[24px] font-bold">
             <span className="lg:text-[18px] text-base text-normal">BDT</span>
-            {/* {formatPrice(product?.price)} */}
-            {`${formatPrice(product?.price)}`}
+
+            {`${isNaN(product.price) ? "0.00" : product.price.toFixed(2)}`}
           </div>
           <div className="lg:text-sm text-xs text-[#0f172a99] line-through font-bold leading-[22px]">
             <span>BDT</span>

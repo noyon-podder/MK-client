@@ -23,7 +23,7 @@ const ProductListStyleCard = ({ product }: TProductListProps) => {
         </h1>
 
         <p
-          className="my-3 text-sm text-gray-600 dark:text-gray-400"
+          className="my-3 text-sm text-gray-600 "
           dangerouslySetInnerHTML={{ __html: product.description }}
         ></p>
         <Rating

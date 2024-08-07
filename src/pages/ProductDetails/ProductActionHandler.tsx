@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { FaRegHeart, FaStar } from "react-icons/fa";
-import Product from "/public/favicon.png";
+import Product from "/favicon.png";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import { useAppDispatch } from "../../redux/hooks";
+import { TProduct } from "../../types/common";
+import { addItem } from "../../redux/featured/product/cartSlice";
 
 type ProductActionProps = {
   isLoading: boolean;
@@ -9,6 +12,7 @@ type ProductActionProps = {
   count: number;
   setCount: (value: number) => void;
   brand: string;
+  product: TProduct;
 };
 
 const ProductActionHandler = ({
@@ -17,7 +21,20 @@ const ProductActionHandler = ({
   count,
   setCount,
   brand,
+  product,
 }: ProductActionProps) => {
+  const dispatch = useAppDispatch();
+
+  const handleAddProductToCart = () => {
+    dispatch(
+      addItem({
+        _id: product._id,
+        price: product.price,
+        name: product.name,
+        quantity: count,
+      })
+    );
+  };
   return (
     <>
       {/* shop details */}
@@ -109,7 +126,10 @@ const ProductActionHandler = ({
             >
               {finalQuantity === 0 ? "Out Of Stock" : "Buy Now"}
             </button>
-            <button className="py-[7px] px-[25px] bg-[#f2f2f2] border border-[#041826] text-[#041826] w-full rounded-[25px] text-base font-medium hover:bg-[#041826] hover:text-white duration-300">
+            <button
+              onClick={handleAddProductToCart}
+              className="py-[7px] px-[25px] bg-[#f2f2f2] border border-[#041826] text-[#041826] w-full rounded-[25px] text-base font-medium hover:bg-[#041826] hover:text-white duration-300"
+            >
               Add To Cart
             </button>
           </div>

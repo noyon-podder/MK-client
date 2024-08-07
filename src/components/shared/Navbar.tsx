@@ -7,9 +7,13 @@ import { useState } from "react";
 import SideMenuBar from "../SideMenuBar";
 import MenuItem from "../MenuItem";
 import Container from "../Container";
+import { useAppSelector } from "../../redux/hooks";
 
 const Navbar = () => {
   const [sideMenuBar, setSideMenuBar] = useState(false);
+  const cart = useAppSelector((state) => state.cart);
+
+  console.log("from Navbar", cart.items);
   return (
     <>
       {/* side bar toggle on mobile device */}
@@ -68,6 +72,7 @@ const Navbar = () => {
                 </div>
                 <button>
                   <IoCartOutline className="" size={36} />
+                  <span>{cart.items.length}</span>
                 </button>
               </div>
             </div>
