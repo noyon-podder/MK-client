@@ -8,6 +8,7 @@ import { MdDescription } from "react-icons/md";
 import { IoIosStarOutline } from "react-icons/io";
 import { TProduct } from "../../types/common";
 import CustomerReviews from "./CustomerReviews";
+import ProductReviews from "./ProductReviews";
 
 type TProductDescriptionAccordionProps = {
   product: TProduct;
@@ -49,8 +50,9 @@ export const ProductDescriptionAccordion = ({
             <IoIosStarOutline size={24} className="text-noyonColor" /> Reviews
           </div>
         </AccordionTrigger>
-        <AccordionContent className="py-5 px-3">
+        <AccordionContent className="py-5 px-5">
           <CustomerReviews />
+          <ProductReviews />
         </AccordionContent>
       </AccordionItem>
     </Accordion>

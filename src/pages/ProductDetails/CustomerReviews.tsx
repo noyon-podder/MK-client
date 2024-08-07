@@ -24,7 +24,7 @@ const CustomerReviews = () => {
             All reviews come from verified purchasers
           </p>
         </div>
-        <div className="lg:col-span-6 col-span-12 lg:px-3 lg:py-0 py-5">
+        <div className="lg:col-span-6 col-span-12 lg:px-6 lg:py-0 py-5">
           <h2 className="text-lg font-semibold text-headingColor">
             <RatingLiveWrapper />
           </h2>
