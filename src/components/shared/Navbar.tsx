@@ -8,12 +8,12 @@ import SideMenuBar from "../SideMenuBar";
 import MenuItem from "../MenuItem";
 import Container from "../Container";
 import { useAppSelector } from "../../redux/hooks";
+import Logo from "/favicon.png";
 
 const Navbar = () => {
   const [sideMenuBar, setSideMenuBar] = useState(false);
   const cart = useAppSelector((state) => state.cart);
 
-  console.log("from Navbar", cart.items);
   return (
     <>
       {/* side bar toggle on mobile device */}
@@ -23,7 +23,7 @@ const Navbar = () => {
           sideMenuBar={sideMenuBar}
         />
       )}
-      <div className="bg-main text-white py-3">
+      <div className="bg-white text-noyonColor py-3 border-b border-[#f2f2f2]">
         <Container>
           <div className="flex items-center justify-between w-full gap-4 px-4 xl:px-0">
             <div
@@ -32,27 +32,34 @@ const Navbar = () => {
             >
               <FaBarsStaggered
                 size={30}
-                className="text-white cursor-pointer"
+                className="text-noyonColor cursor-pointer"
               />
             </div>
             {/* header part */}
             <div className="xl:flex-1 ">
-              <div className="lg:w-[150px]">
-                <h2 className="font-bold text-white text-3xl p-0">MK Shop</h2>
-              </div>
+              <Link
+                to={"/"}
+                className="lg:w-[200px] flex items-center gap-[8px]"
+              >
+                <img src={Logo} alt="logo" className="w-[30px]" />
+                <h2 className="font-extrabold text-headingColor text-[24px] p-0 uppercase">
+                  M<span className="text-noyonColor">K</span> S
+                  <span className="uppercase text-noyonColor">ho</span>p
+                </h2>
+              </Link>
             </div>
             {/* search part */}
             <div className=" w-full flex-1 lg:flex-1 xl:mr-10 hidden lg:block">
-              <div className=" xl:w-[700px] flex  items-center pr-2 w-full h-10 bg-white rounded-lg">
+              <div className=" xl:w-[700px] flex  items-center border border-[#d2d2d2] rounded-[20px] w-full h-11 bg-white">
                 <input
                   type="text"
                   placeholder="What are you looking for?"
                   name=""
                   id=""
-                  className="w-full h-full px-3 py-2 rounded-md border-none outline-none text-black"
+                  className="w-full h-full px-3 py-2  bg-transparent outline-none text-black rounded-tl-[20px] rounded-bl-[20px]"
                 />
-                <button className="bg-[#ffe1d2] h-7 px-3 rounded-md">
-                  <IoSearchOutline size={24} className="text-main" />
+                <button className="bg-noyonColor h-11 px-5 rounded-tr-[20px] rounded-br-[20px]">
+                  <IoSearchOutline size={24} className="text-white" />
                 </button>
               </div>
             </div>
@@ -62,19 +69,25 @@ const Navbar = () => {
               {/* <Button>Cart</Button> */}
               <div className="flex items-center gap-5 justify-end">
                 <div className="lg:flex hidden items-center gap-3">
-                  <BsEnvelope size={24} />
+                  <BsEnvelope size={32} className="text-headingColor" />
                   <div className="flex flex-col ">
-                    <h2 className="text-sm text-white font-semibold">
+                    <h2 className="text-sm text-headingColor font-semibold">
                       Questions?
                     </h2>
-                    <span className="text-xs">support@mk.com</span>
+                    <span className="text-xs text-gray-400">
+                      support@mk.com
+                    </span>
                   </div>
                 </div>
                 <Link to="/cart">
                   {" "}
-                  <button>
-                    <IoCartOutline className="" size={36} />
-                    <span>{cart.items.length}</span>
+                  <button className="relative">
+                    <IoCartOutline className="text-headingColor" size={36} />
+                    {cart.items.length > 0 && (
+                      <span className="px-3 rounded-xl block text-center h-6 bg-noyonColor text-white absolute -top-2 -right-4">
+                        {cart.items.length}
+                      </span>
+                    )}
                   </button>
                 </Link>
               </div>
@@ -96,12 +109,12 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div className="mt-5 lg:flex items-center justify-between xl:px-0 px-4 hidden ">
+          <div className="mt-5 lg:flex items-center justify-between xl:px-0 px-4 hidden lg:pb-3">
             <MenuItem setSideMenuBar={setSideMenuBar} />
 
             <Link
               to="/"
-              className="text-white text-xl font-semibold hover:text-[#ede6e6] duration-300"
+              className="text-headingColor text-xl font-semibold hover:text-[#ede6e6] duration-300"
             >
               Login
             </Link>
