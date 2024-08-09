@@ -59,16 +59,20 @@ const CartPage = () => {
                   Sub Total
                 </span>
                 <span className="text-sm leading-[24px] text-headingColor font-semibold flex items-center">
-                  BDT {finalPrice}
+                  BDT {cart.items.length > 0 ? finalPrice : "00"}
                 </span>
               </div>
 
               <div className="mt-5">
-                <Link
-                  to="/order"
-                  className="w-full bg-noyonColor hover:bg-red-500 duration-300 text-center text-white block py-[8px] px-[12px] font-medium rounded-[6px]"
-                >
-                  Place Order
+                <Link to="/order">
+                  <button
+                    disabled={cart.items.length === 0}
+                    className={`w-full bg-noyonColor hover:bg-red-500 duration-300 text-center text-white block py-[8px] px-[12px] font-medium rounded-[6px] ${
+                      cart.items.length === 0 ? "opacity-50" : "opacity-100"
+                    }`}
+                  >
+                    Place Order
+                  </button>
                 </Link>
               </div>
             </div>

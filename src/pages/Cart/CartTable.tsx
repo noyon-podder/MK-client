@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { updateQuantity } from "../../redux/featured/product/cartSlice";
 import { TbCurrencyTaka } from "react-icons/tb";
+import { BsTrash } from "react-icons/bs";
 
 const CartPage = () => {
   const cart = useAppSelector((state) => state.cart);
@@ -95,9 +96,9 @@ const CartPage = () => {
                   <td className="px-6 py-4">
                     <button
                       // onClick={() => handleRemove(item._id)}
-                      className="bg-red-500 text-white px-4 py-2 rounded"
+                      className="bg-gray-100 text-noyonColor px-4 py-2 rounded"
                     >
-                      Delete
+                      <BsTrash size={24} />
                     </button>
                   </td>
                 </tr>
