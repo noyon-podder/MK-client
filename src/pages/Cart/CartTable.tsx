@@ -1,6 +1,9 @@
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { FiMinus, FiPlus } from "react-icons/fi";
-import { updateQuantity } from "../../redux/featured/product/cartSlice";
+import {
+  removeItem,
+  updateQuantity,
+} from "../../redux/featured/product/cartSlice";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { BsTrash } from "react-icons/bs";
 
@@ -12,6 +15,11 @@ const CartPage = () => {
     if (newQuantity >= 0) {
       dispatch(updateQuantity({ id, quantity: newQuantity }));
     }
+  };
+
+  const handleRemoveCart = (id: string) => {
+    console.log("i am clicked");
+    dispatch(removeItem(id));
   };
 
   return (
@@ -95,7 +103,7 @@ const CartPage = () => {
                   </td>
                   <td className="px-6 py-4">
                     <button
-                      // onClick={() => handleRemove(item._id)}
+                      onClick={() => handleRemoveCart(item._id)}
                       className="bg-gray-100 text-noyonColor px-4 py-2 rounded"
                     >
                       <BsTrash size={24} />

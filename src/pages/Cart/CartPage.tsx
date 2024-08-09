@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
 import Container from "../../components/Container";
-import { Button } from "../../components/ui/button";
 import { useAppSelector } from "../../redux/hooks";
 import CartTable from "./CartTable";
-import { TbCurrencyTaka } from "react-icons/tb";
 
 const CartPage = () => {
   const cart = useAppSelector((state) => state.cart);
 
   const SHIPPING_CHARGE = 45;
-  console.log(cart);
+
   // calculate total price  of cart
   const totalPrice = cart.items.reduce(
     (acc, item) => acc + item.price * item.quantity,
