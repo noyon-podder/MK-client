@@ -12,10 +12,7 @@ const CartPage = () => {
                 Cart Order
               </h2>
             </div>
-            <CartTable
-            // handleRemove={handleRemove}
-            // handleQuantityChange={handleQuantityChange}
-            />
+            <CartTable />
           </div>
           <div className="lg:col-span-3 col-span-12">Order</div>
         </div>

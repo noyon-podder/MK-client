@@ -2,27 +2,10 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { updateQuantity } from "../../redux/featured/product/cartSlice";
 import { TbCurrencyTaka } from "react-icons/tb";
-import { useEffect } from "react";
 
 const CartPage = () => {
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
-      if (cart.items.length > 0) {
-        e.preventDefault();
-        e.returnValue = "";
-      }
-    };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, [cart.items.length]);
 
   const handleQuantityChange = (id: string, newQuantity: number) => {
     if (newQuantity >= 0) {
