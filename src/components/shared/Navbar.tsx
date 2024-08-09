@@ -31,8 +31,8 @@ const Navbar = () => {
               onClick={() => setSideMenuBar(!sideMenuBar)}
             >
               <FaBarsStaggered
-                size={30}
-                className="text-noyonColor cursor-pointer"
+                size={24}
+                className="text-headingColor cursor-pointer"
               />
             </div>
             {/* header part */}
@@ -41,9 +41,9 @@ const Navbar = () => {
                 to={"/"}
                 className="lg:w-[200px] flex items-center gap-[8px]"
               >
-                <img src={Logo} alt="logo" className="w-[30px]" />
-                <h2 className="font-extrabold text-headingColor text-[24px] p-0 uppercase">
-                  M<span className="text-noyonColor">K</span> S
+                <img src={Logo} alt="logo" className="lg:w-[40px] w-[25px]" />
+                <h2 className="font-extrabold text-headingColor lg:text-[24px] text-[22px] p-0 uppercase">
+                  N<span className="text-noyonColor">S</span> S
                   <span className="uppercase text-noyonColor">ho</span>p
                 </h2>
               </Link>
@@ -82,7 +82,7 @@ const Navbar = () => {
                 <Link to="/cart">
                   {" "}
                   <button className="relative">
-                    <IoCartOutline className="text-headingColor" size={36} />
+                    <IoCartOutline className="text-headingColor lg:text-[32px] text-[30px]" />
                     {cart.items.length > 0 && (
                       <span className="px-3 rounded-xl block text-center h-6 bg-noyonColor text-white absolute -top-2 -right-4">
                         {cart.items.length}
@@ -95,16 +95,16 @@ const Navbar = () => {
           </div>
           <div className="mt-3">
             <div className=" w-full flex-1 lg:flex-1 xl:mr-10 block lg:hidden xl:px-0 px-4">
-              <div className=" xl:w-[700px] flex  items-center pr-2 w-full h-10 bg-white rounded-md">
+              <div className=" xl:w-[700px] flex  items-center border border-[#d2d2d2] rounded-[20px] w-full h-10 bg-white">
                 <input
                   type="text"
-                  name=""
                   placeholder="What are you looking for?"
+                  name=""
                   id=""
-                  className="w-full h-full px-3 py-2 rounded-md border-none outline-none text-black"
+                  className="w-full h-full px-3 py-2  bg-transparent outline-none text-black rounded-tl-[20px] rounded-bl-[20px]"
                 />
-                <button className="bg-[#ffe1d2] h-7 px-3 rounded-md">
-                  <IoSearchOutline size={24} className="text-main" />
+                <button className="bg-noyonColor h-10 px-3 rounded-tr-[4px] rounded-br-[4px]">
+                  <IoSearchOutline size={24} className="text-white" />
                 </button>
               </div>
             </div>

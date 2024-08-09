@@ -11,7 +11,7 @@ const MenuItem: React.FC<TSideMenuBarProps> = ({ setSideMenuBar }) => {
             <Link
               onClick={() => setSideMenuBar(false)}
               to={item.path}
-              className="text-base font-semibold text-headingColor  lg:hover:text-[#ede6e6] duration-300"
+              className="text-base font-semibold text-headingColor  lg:hover:text-gray-600 duration-300"
             >
               {item.label}
             </Link>
