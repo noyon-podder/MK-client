@@ -23,7 +23,7 @@ const CartPage = () => {
         </div>
       ) : (
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white border border-gray-200">
+          <table className="min-w-full rounded-[12px] bg-white ">
             <thead>
               <tr>
                 <th className="px-6 py-3 border-b">Product Image</th>
@@ -45,7 +45,7 @@ const CartPage = () => {
                     />
                   </td>
                   <td className="px-6 py-4">
-                    <h2 className="text-headingColor font-semibold">
+                    <h2 className="text-headingColor text-[15px] font-medium">
                       {item.name}
                     </h2>
                   </td>
@@ -87,7 +87,7 @@ const CartPage = () => {
                     </div>
                   </td>
                   <td className="px-6 py-4">
-                    <p className="flex items-center gap-[2px]">
+                    <p className="flex items-center">
                       <TbCurrencyTaka size={24} />
                       {(item.price * item.quantity).toFixed(2)}
                     </p>
