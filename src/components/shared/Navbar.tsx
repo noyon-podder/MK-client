@@ -70,10 +70,13 @@ const Navbar = () => {
                     <span className="text-xs">support@mk.com</span>
                   </div>
                 </div>
-                <button>
-                  <IoCartOutline className="" size={36} />
-                  <span>{cart.items.length}</span>
-                </button>
+                <Link to="/cart">
+                  {" "}
+                  <button>
+                    <IoCartOutline className="" size={36} />
+                    <span>{cart.items.length}</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

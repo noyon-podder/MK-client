@@ -32,6 +32,7 @@ const ProductActionHandler = ({
         price: product.price,
         name: product.name,
         quantity: count,
+        image: product.image,
       })
     );
   };

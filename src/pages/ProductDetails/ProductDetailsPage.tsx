@@ -21,7 +21,7 @@ const ProductDetailsPage = () => {
   }, [product, count]);
 
   return (
-    <div className="py-7">
+    <div className="lg:py-7 px-3 py-5">
       <Container>
         <div className="bg-white">
           <div className="grid lg:grid-cols-10 grid-cols-1 gap-7 py-4 px-4 lg:p-4 ">

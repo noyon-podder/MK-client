@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 type TCartItem = {
   _id: string;
   name: string;
+  image: string;
   price: number;
   quantity: number;
 };
@@ -36,9 +37,18 @@ const cartSlice = createSlice({
       state.totalQuantity += action.payload.quantity;
       state.totalPrice += action.payload.price * action.payload.quantity;
     },
+
+    // update quantity
+    updateQuantity: (state, action) => {
+      const { id, quantity } = action.payload;
+      const item = state.items.find((item) => item._id === id);
+      if (item) {
+        item.quantity = quantity;
+      }
+    },
   },
 });
 
-export const { addItem } = cartSlice.actions;
+export const { addItem, updateQuantity } = cartSlice.actions;
 
 export default cartSlice.reducer;
