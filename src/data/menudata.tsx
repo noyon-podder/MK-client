@@ -18,6 +18,11 @@ export const menuItems = [
   },
   {
     id: 4,
+    path: "/products",
+    label: "Product",
+  },
+  {
+    id: 5,
     path: "/dashboard",
     label: "Dashboard",
   },

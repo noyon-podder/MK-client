@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import Container from "../../components/Container";
 import { useAppSelector } from "../../redux/hooks";
+import PaymentMethodSelect from "./PaymentMethodSelect";
 import ShippingForm from "./ShippingForm";
+import { FieldValues, SubmitHandler } from "react-hook-form";
 
 const ShippingPage = () => {
   const cart = useAppSelector((state) => state.cart);
+  const [paymentMethod, setPaymentMethod] = useState("BKASH");
 
   const SHIPPING_CHARGE = 45;
 
@@ -16,6 +19,19 @@ const ShippingPage = () => {
 
   const finalPrice = totalPrice + SHIPPING_CHARGE;
 
+  const handlePaymentInfoSubmit: SubmitHandler<FieldValues> = (data) => {
+    const paymentData = {
+      paymentMethod,
+      shippingData: {
+        ...data,
+      },
+      orderItems: cart.items,
+      totalPrice: finalPrice,
+      shippingCharge: SHIPPING_CHARGE,
+    };
+    console.log(paymentData);
+  };
+
   return (
     <div className="py-5">
       <Container>
@@ -26,7 +42,7 @@ const ShippingPage = () => {
                 Shipping
               </h2>
             </div>
-            <ShippingForm />
+            <ShippingForm handlePaymentInfoSubmit={handlePaymentInfoSubmit} />
           </div>
           <div className="lg:col-span-3 col-span-12">
             <div className="bg-white p-5 shadow-sm rounded-[12px]">
@@ -61,6 +77,12 @@ const ShippingPage = () => {
                 </span>
               </div>
             </div>
+
+            <PaymentMethodSelect
+              paymentMethod={paymentMethod}
+              setPaymentMethod={setPaymentMethod}
+            />
+            <div></div>
           </div>
         </div>
       </Container>
