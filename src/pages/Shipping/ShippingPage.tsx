@@ -13,6 +13,11 @@ const ShippingPage = () => {
   const dispatch = useAppDispatch();
   const [paymentMethod, setPaymentMethod] = useState("BKASH");
 
+  const directBuyProduct = useAppSelector((state) => state.buyProduct);
+  const directBuyProductPrice =
+    directBuyProduct.items.price * directBuyProduct.items.quantity;
+
+  console.log({ directBuyProduct });
   const SHIPPING_CHARGE = 45;
 
   // calculate total price  of cart
@@ -63,9 +68,11 @@ const ShippingPage = () => {
                   Total Items
                 </span>
                 <span className="text-sm leading-[24px] text-gray-500">{`${
-                  cart?.items?.length < 9
-                    ? `0${cart?.items?.length}`
-                    : cart?.items?.length
+                  cart?.items?.length > 0
+                    ? cart?.items?.length < 9
+                      ? `0${cart?.items?.length}`
+                      : cart?.items?.length
+                    : 1
                 }`}</span>
               </div>
               <div className="flex items-center justify-between mb-3">
@@ -81,7 +88,8 @@ const ShippingPage = () => {
                   Sub Total
                 </span>
                 <span className="text-sm leading-[24px] text-headingColor font-semibold flex items-center">
-                  BDT {cart.items.length > 0 ? finalPrice : "00"}
+                  BDT{" "}
+                  {cart.items.length > 0 ? finalPrice : directBuyProductPrice}
                 </span>
               </div>
             </div>

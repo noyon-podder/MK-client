@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegHeart, FaStar } from "react-icons/fa";
 import Product from "/favicon.png";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { useAppDispatch } from "../../redux/hooks";
 import { TProduct } from "../../types/common";
-import { addItem } from "../../redux/featured/product/cartSlice";
+import { productBuy } from "../../redux/featured/product/buyProductSlice";
 
 type ProductActionProps = {
   isLoading: boolean;
@@ -24,10 +24,11 @@ const ProductActionHandler = ({
   product,
 }: ProductActionProps) => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const handleAddProductToCart = () => {
     dispatch(
-      addItem({
+      productBuy({
         _id: product._id,
         price: product.price,
         name: product.name,
@@ -35,6 +36,19 @@ const ProductActionHandler = ({
         image: product.image,
       })
     );
+  };
+
+  const handleBuyNow = () => {
+    dispatch(
+      productBuy({
+        _id: product._id,
+        price: product.price,
+        name: product.name,
+        quantity: count,
+        image: product.image,
+      })
+    );
+    navigate("/order");
   };
   return (
     <>
@@ -118,6 +132,7 @@ const ProductActionHandler = ({
 
           <div className="flex items-center gap-4 mt-5 flex-col">
             <button
+              onClick={handleBuyNow}
               className={`py-[7px] px-[25px]  text-white w-full rounded-[25px] text-base font-medium  ${
                 finalQuantity === 0
                   ? "bg-[#ce3434e7]"
@@ -127,6 +142,7 @@ const ProductActionHandler = ({
             >
               {finalQuantity === 0 ? "Out Of Stock" : "Buy Now"}
             </button>
+
             <button
               onClick={handleAddProductToCart}
               className="py-[7px] px-[25px] bg-[#f2f2f2] border border-[#041826] text-[#041826] w-full rounded-[25px] text-base font-medium hover:bg-[#041826] hover:text-white duration-300"
