@@ -1,12 +1,16 @@
 import { useState } from "react";
 import Container from "../../components/Container";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import PaymentMethodSelect from "./PaymentMethodSelect";
 import ShippingForm from "./ShippingForm";
 import { FieldValues, SubmitHandler } from "react-hook-form";
+import { clearCart } from "../../redux/featured/product/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const ShippingPage = () => {
+  const navigate = useNavigate();
   const cart = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
   const [paymentMethod, setPaymentMethod] = useState("BKASH");
 
   const SHIPPING_CHARGE = 45;
@@ -31,6 +35,9 @@ const ShippingPage = () => {
     };
     //TODO: Payment Information for successfully payment
     console.log(paymentData);
+
+    dispatch(clearCart());
+    navigate("/order-success");
   };
 
   return (

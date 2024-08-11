@@ -10,12 +10,14 @@ import ProductDetailsPage from "../pages/ProductDetails/ProductDetailsPage";
 import CartPage from "../pages/Cart/CartPage";
 import ShippingPage from "../pages/Shipping/ShippingPage";
 import NotFound from "../pages/404/NotFound";
+import OrderSuccess from "../pages/OrderSuccess/OrderSuccess";
 
 export const router = createBrowserRouter([
   {
     path: "*",
     element: <NotFound />,
   },
+
   {
     path: "/",
     element: <MainLayout />,
@@ -45,6 +47,10 @@ export const router = createBrowserRouter([
         element: <ShippingPage />,
       },
     ],
+  },
+  {
+    path: "/order-success",
+    element: <OrderSuccess />,
   },
   {
     path: "/",

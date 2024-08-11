@@ -13,7 +13,7 @@ const ShippingForm: React.FC<TShippingFromProps> = ({
   return (
     <div className="bg-white p-5 rounded-[12px]">
       <Form onSubmit={handlePaymentInfoSubmit}>
-        <div className="grid lg:grid-cols-12 grid-cols-1 gap-5 gap-y-2">
+        <div className="grid lg:grid-cols-12 grid-cols-1 lg:gap-5 lg:gap-y-2">
           <div className="md:col-span-6 col-span-12">
             <Input
               type="text"
