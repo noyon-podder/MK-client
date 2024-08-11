@@ -5,6 +5,7 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 import { useAppDispatch } from "../../redux/hooks";
 import { TProduct } from "../../types/common";
 import { productBuy } from "../../redux/featured/product/buyProductSlice";
+import { addItem } from "../../redux/featured/product/cartSlice";
 
 type ProductActionProps = {
   isLoading: boolean;
@@ -28,7 +29,7 @@ const ProductActionHandler = ({
 
   const handleAddProductToCart = () => {
     dispatch(
-      productBuy({
+      addItem({
         _id: product._id,
         price: product.price,
         name: product.name,

@@ -10,6 +10,10 @@ type TProductListProps = {
 };
 
 const ProductListStyleCard = ({ product }: TProductListProps) => {
+  const description =
+    product?.description.length > 200
+      ? `${product.description.slice(0, 200)}...`
+      : `${product.description}`;
   return (
     <div className="flex  overflow-hidden bg-white rounded-lg border border-[#eee] ">
       <div
@@ -24,7 +28,7 @@ const ProductListStyleCard = ({ product }: TProductListProps) => {
 
         <p
           className="my-3 text-sm text-gray-600 "
-          dangerouslySetInnerHTML={{ __html: product.description }}
+          dangerouslySetInnerHTML={{ __html: description }}
         ></p>
         <Rating
           rating={product.rating}

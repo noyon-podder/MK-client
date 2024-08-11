@@ -18,7 +18,6 @@ const CartPage = () => {
   };
 
   const handleRemoveCart = (id: string) => {
-    console.log("i am clicked");
     dispatch(removeItem(id));
   };
 

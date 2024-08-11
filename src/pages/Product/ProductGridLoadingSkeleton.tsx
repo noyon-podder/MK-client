@@ -2,7 +2,7 @@ const ProductGridLoadingSkeleton = () => {
   return (
     <div>
       <section className="bg-white ">
-        <div className="container px-6 py-10 mx-auto animate-pulse">
+        <div className=" px-6 py-10 mx-auto animate-pulse">
           <div className="grid grid-cols-1 gap-5 py-4 md:grid-cols-2 lg:grid-cols-3">
             <div className="w-full animate-pulse">
               <div className="w-full h-64 bg-gray-200 rounded-lg "></div>
