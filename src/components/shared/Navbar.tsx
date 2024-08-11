@@ -84,7 +84,7 @@ const Navbar = () => {
                   <button className="relative">
                     <IoCartOutline className="text-headingColor lg:text-[32px] text-[30px]" />
                     {cart.items.length > 0 && (
-                      <span className="px-3 rounded-xl block text-center h-6 bg-noyonColor text-white absolute -top-2 -right-4">
+                      <span className="px-2 text-sm rounded-xl block text-center h-5 bg-noyonColor text-white absolute -top-2 -right-4">
                         {cart.items.length}
                       </span>
                     )}

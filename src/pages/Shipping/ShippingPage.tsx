@@ -29,6 +29,7 @@ const ShippingPage = () => {
       totalPrice: finalPrice,
       shippingCharge: SHIPPING_CHARGE,
     };
+    //TODO: Payment Information for successfully payment
     console.log(paymentData);
   };
 

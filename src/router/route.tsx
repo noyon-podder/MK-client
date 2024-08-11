@@ -9,8 +9,13 @@ import ProductPage from "../pages/Product/ProductPage";
 import ProductDetailsPage from "../pages/ProductDetails/ProductDetailsPage";
 import CartPage from "../pages/Cart/CartPage";
 import ShippingPage from "../pages/Shipping/ShippingPage";
+import NotFound from "../pages/404/NotFound";
 
 export const router = createBrowserRouter([
+  {
+    path: "*",
+    element: <NotFound />,
+  },
   {
     path: "/",
     element: <MainLayout />,
