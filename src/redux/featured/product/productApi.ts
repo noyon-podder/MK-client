@@ -12,10 +12,18 @@ const productApi = baseApi.injectEndpoints({
     }),
 
     getProduct: builder.query({
-      query: () => ({
-        url: "/product",
-        method: "GET",
-      }),
+      query: (queryParams = {}) => {
+        // Add default value
+        const { searchTerm, sort, minPrice, maxPrice } = queryParams;
+
+        const params = new URLSearchParams();
+
+        if (searchTerm) params.append("searchTerm", searchTerm);
+        if (minPrice) params.append("minPrice", minPrice);
+        if (maxPrice) params.append("maxPrice", maxPrice);
+        if (sort) params.append("sort", sort);
+        return `/product?${params.toString()}`;
+      },
       providesTags: ["Product"],
     }),
 

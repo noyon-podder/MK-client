@@ -1,7 +1,6 @@
 import { formatPrice } from "../../utils/formatPrice";
 import Rating from "../Rating";
 import { TbCurrencyTaka } from "react-icons/tb";
-import { Button } from "../ui/button";
 import { TProduct } from "../../types/common";
 import { Link } from "react-router-dom";
 
@@ -40,8 +39,12 @@ const ProductListStyleCard = ({ product }: TProductListProps) => {
             <TbCurrencyTaka size={24} />
             {formatPrice(product.price)}
           </h1>
-          <Link to={`/product/${product._id}`}>
-            <Button size="sm">See Details</Button>
+          <Link
+            className="text-base font-medium text-noyonColor"
+            to={`/product/${product._id}`}
+          >
+            {/* <Button size="sm">See Details</Button> */}
+            See Details..
           </Link>
         </div>
       </div>

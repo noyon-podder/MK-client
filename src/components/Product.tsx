@@ -5,9 +5,9 @@ import Container from "./Container";
 import ProductCard from "./shared/ProductCard";
 
 const Product = () => {
-  const { data, isLoading } = useGetProductQuery(undefined);
+  const { data, isLoading } = useGetProductQuery({});
 
-  const productData = data?.data?.slice(0, 8);
+  const productData = data?.data?.slice(0, 6);
   return (
     <div className="lg:pb-7 lg:px-0">
       <Container>
@@ -21,7 +21,7 @@ const Product = () => {
               <ProductGridLoadingSkeleton />
             </div>
           ) : (
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
               {productData?.map((product: TProduct) => (
                 <ProductCard key={product._id} product={product} />
               ))}

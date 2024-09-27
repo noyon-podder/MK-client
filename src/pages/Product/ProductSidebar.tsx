@@ -1,25 +1,47 @@
-import { Link } from "react-router-dom";
-import { TProduct } from "../../types/common";
 import CustomerServiceInfo from "./CustomerServiceInfo";
 
-const ProductSidebar = ({ data }: { data: TProduct[] }) => {
+interface TProps {
+  handleMinPrice: (e: { target: { value: string } }) => void;
+  handleMaxPrice: (e: { target: { value: string } }) => void;
+}
+
+const ProductSidebar = ({ handleMinPrice, handleMaxPrice }: TProps) => {
   return (
     <div className="">
       {/* filter by brand */}
-      <div className="border border-borderColor mb-[30px] bg-white overflow-hidden max-h-[300px] overflow-y-auto">
-        <h3 className="py-[10px] pl-[10px] border-b border-borderColor font-bold text-heading uppercase">
-          Brand
+      <div className="border border-borderColor mb-[30px] bg-white  max-h-[300px] max-w-[300px]">
+        <h3 className="py-[10px] pl-[10px] border-b border-borderColor font-bold text-heading capitalize">
+          Filter By Price
         </h3>
-        <div className="px-[10px]">
-          <ul className="py-[5px]">
-            {data?.map((item: TProduct) => (
-              <li key={item._id} className="py-[5px] leading-[28px]">
-                <Link to="" className="text-[#444] font-normal hover:text-base">
-                  {item?.brand}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className="px-[10px] py-5 flex  flex-col gap-3 ">
+          <div className="flex-1 ">
+            <label
+              htmlFor="minPrice"
+              className="block text-sm font-semibold text-headingColor mb-1"
+            >
+              Min Price
+            </label>
+            <input
+              type="text"
+              onChange={handleMinPrice}
+              id="minPrice"
+              className="border px-3 py-1 w-full outline-none focus:border-main border-gray-400 rounded-md"
+            />
+          </div>
+          <div className="flex-1">
+            <label
+              htmlFor="maxPrice"
+              className="block text-sm font-semibold text-headingColor mb-1"
+            >
+              Max Price
+            </label>
+            <input
+              type="text"
+              onChange={handleMaxPrice}
+              id="maxPrice"
+              className="border px-3 py-1 outline-none focus:border-main w-full border-gray-400 rounded-md"
+            />
+          </div>
         </div>
       </div>
       {/* customer service information */}
