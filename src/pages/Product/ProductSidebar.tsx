@@ -9,7 +9,7 @@ const ProductSidebar = ({ handleMinPrice, handleMaxPrice }: TProps) => {
   return (
     <div className="">
       {/* filter by brand */}
-      <div className="border border-borderColor mb-[30px] bg-white  max-h-[300px] max-w-[300px]">
+      <div className="border border-borderColor mb-[30px] bg-white  lg:max-w-[300px]">
         <h3 className="py-[10px] pl-[10px] border-b border-borderColor font-bold text-heading capitalize">
           Filter By Price
         </h3>

@@ -91,6 +91,7 @@ const ProductPage = () => {
 
   // filter the price handle min price
   const toastId = "invalid-price-error";
+
   const handleMinPrice = (e: { target: { value: string } }) => {
     const value = e.target.value;
     const numberValue = Number(value);
@@ -171,7 +172,10 @@ const ProductPage = () => {
               </button>
             </div>
 
-            <ProductSortSidebar />
+            <ProductSortSidebar
+              handleMinPrice={handleMinPrice}
+              handleMaxPrice={handleMaxPrice}
+            />
 
             {/* sorting selection */}
             <div className="flex items-center">

@@ -8,10 +8,13 @@ import {
   SheetTrigger,
 } from "../../components/ui/sheet";
 import ProductSidebar from "./ProductSidebar";
-import { useGetProductQuery } from "../../redux/featured/product/productApi";
 
-const ProductSortSidebar = () => {
-  const { data } = useGetProductQuery(undefined);
+interface TProps {
+  handleMinPrice: (e: { target: { value: string } }) => void;
+  handleMaxPrice: (e: { target: { value: string } }) => void;
+}
+
+const ProductSortSidebar = ({ handleMinPrice, handleMaxPrice }: TProps) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -26,7 +29,10 @@ const ProductSortSidebar = () => {
             <h2 className="mb-3">Filter Product</h2>
           </SheetTitle>
           <SheetDescription>
-            <ProductSidebar data={data?.data} />
+            <ProductSidebar
+              handleMaxPrice={handleMaxPrice}
+              handleMinPrice={handleMinPrice}
+            />
           </SheetDescription>
         </SheetHeader>
       </SheetContent>
