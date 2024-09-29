@@ -15,7 +15,6 @@ const Contact = () => {
         breadcrumb={breadcrumb}
       />
       <ContactUsForm />
-      {/* <NewsletterSignup /> */}
     </>
   );
 };
