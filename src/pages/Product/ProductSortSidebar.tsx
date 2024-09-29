@@ -20,7 +20,7 @@ const ProductSortSidebar = ({ handleMinPrice, handleMaxPrice }: TProps) => {
       <SheetTrigger asChild>
         <div className="flex gap-2 items-center px-3 py-1 bg-[#666] text-white rounded-sm cursor-pointer lg:hidden">
           <FaBars />
-          Sidebar
+          Filter
         </div>
       </SheetTrigger>
       <SheetContent side={"left"}>

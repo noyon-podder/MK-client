@@ -11,6 +11,7 @@ import CartPage from "../pages/Cart/CartPage";
 import ShippingPage from "../pages/Shipping/ShippingPage";
 import NotFound from "../pages/404/NotFound";
 import OrderSuccess from "../pages/OrderSuccess/OrderSuccess";
+import Contact from "../pages/Contact/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
       {
         path: "/order",
         element: <ShippingPage />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
