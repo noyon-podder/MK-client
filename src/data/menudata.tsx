@@ -33,18 +33,18 @@ export const dashboardRoute = [
     id: 1,
     path: "/dashboard",
     icon: <IoIosHome size={24} />,
-    name: "Dashboard",
-  },
-  {
-    id: 2,
-    path: "/",
-    icon: <IoIosHome size={24} />,
-    name: "Home",
+    name: "Product Details",
   },
   {
     id: 3,
     path: "/dashboard/add-product",
     icon: <IoBagAddOutline size={24} />,
     name: "Add Product",
+  },
+  {
+    id: 2,
+    path: "/",
+    icon: <IoIosHome size={24} />,
+    name: "Home",
   },
 ];

@@ -31,7 +31,7 @@ const OurStory = () => {
             className="w-full md:w-1/2 md:pl-10"
           >
             <h2 className="lg:text-4xl text-3xl  font-mono font-bold mb-6 text-gray-800 dark:text-gray-200">
-              ScheduliFy Story
+              NS Shop Story
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
               Our journey began with a simple idea: to create a platform that

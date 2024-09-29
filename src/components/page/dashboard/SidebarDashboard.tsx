@@ -18,7 +18,7 @@ const SidebarDashboard = () => {
                 to={route.path}
                 className={`px-4 flex items-center  py-4  gap-1 ${
                   route.path === params.pathname
-                    ? "bg-white text-black"
+                    ? "bg-main text-white"
                     : "text-white"
                 }`}
               >

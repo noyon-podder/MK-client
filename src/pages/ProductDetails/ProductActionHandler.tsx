@@ -1,10 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaRegHeart, FaStar } from "react-icons/fa";
 import Product from "/favicon.png";
 import { FiMinus, FiPlus } from "react-icons/fi";
 import { useAppDispatch } from "../../redux/hooks";
 import { TProduct } from "../../types/common";
-import { productBuy } from "../../redux/featured/product/buyProductSlice";
+// import { productBuy } from "../../redux/featured/product/buyProductSlice";
 import { addItem } from "../../redux/featured/product/cartSlice";
 
 type ProductActionProps = {
@@ -25,7 +25,7 @@ const ProductActionHandler = ({
   product,
 }: ProductActionProps) => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleAddProductToCart = () => {
     dispatch(
@@ -39,18 +39,18 @@ const ProductActionHandler = ({
     );
   };
 
-  const handleBuyNow = () => {
-    dispatch(
-      productBuy({
-        _id: product._id,
-        price: product.price,
-        name: product.name,
-        quantity: count,
-        image: product.image,
-      })
-    );
-    navigate("/order");
-  };
+  // const handleBuyNow = () => {
+  //   dispatch(
+  //     productBuy({
+  //       _id: product._id,
+  //       price: product.price,
+  //       name: product.name,
+  //       quantity: count,
+  //       image: product.image,
+  //     })
+  //   );
+  //   navigate("/order");
+  // };
   return (
     <>
       {/* shop details */}
@@ -121,7 +121,10 @@ const ProductActionHandler = ({
               />
               <button
                 onClick={() => setCount(count + 1)}
-                className="h-[32px] w-10 border-none bg-[#f2f2f2] hover:bg-[#eaeaea] flex items-center justify-center"
+                disabled={finalQuantity === 0}
+                className={`h-[32px] w-10 border-none bg-[#f2f2f2] hover:bg-[#eaeaea] flex items-center justify-center  ${
+                  finalQuantity === 0 ? "cursor-not-allowed" : "cursor-pointer"
+                }`}
               >
                 <FiPlus />
               </button>
@@ -132,7 +135,7 @@ const ProductActionHandler = ({
           </div>
 
           <div className="flex items-center gap-4 mt-5 flex-col">
-            <button
+            {/* <button
               onClick={handleBuyNow}
               className={`py-[7px] px-[25px]  text-white w-full rounded-[25px] text-base font-medium  ${
                 finalQuantity === 0
@@ -142,11 +145,14 @@ const ProductActionHandler = ({
               disabled={finalQuantity === 0}
             >
               {finalQuantity === 0 ? "Out Of Stock" : "Buy Now"}
-            </button>
+            </button> */}
 
             <button
               onClick={handleAddProductToCart}
-              className="py-[7px] px-[25px] bg-[#f2f2f2] border border-[#041826] text-[#041826] w-full rounded-[25px] text-base font-medium hover:bg-[#041826] hover:text-white duration-300"
+              disabled={finalQuantity === 0}
+              className={`py-[7px] px-[25px] hover:bg-[#f2f2f2] border border-[#041826] hover:text-[#041826] w-full rounded-[25px] text-base font-medium bg-[#041826] text-white duration-300 ${
+                finalQuantity === 0 ? "opacity-20" : ""
+              }`}
             >
               Add To Cart
             </button>
