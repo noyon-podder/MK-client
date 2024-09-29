@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import ProductGridLoadingSkeleton from "../pages/Product/ProductGridLoadingSkeleton";
 import { useGetProductQuery } from "../redux/featured/product/productApi";
 import { TProduct } from "../types/common";
 import Container from "./Container";
 import ProductCard from "./shared/ProductCard";
+import { Button } from "./ui/button";
 
 const Product = () => {
   const { data, isLoading } = useGetProductQuery({});
@@ -27,6 +29,12 @@ const Product = () => {
               ))}
             </div>
           )}
+        </div>
+
+        <div className="flex items-center justify-center my-5">
+          <Link to="/products">
+            <Button>See All</Button>
+          </Link>
         </div>
       </Container>
     </div>
